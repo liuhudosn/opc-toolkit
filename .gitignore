@@ -1,0 +1,6 @@
+docs/founders-playbook.pdf
+node_modules/
+dist/
+.env
+.env.local
+*.log
