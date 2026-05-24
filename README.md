@@ -90,22 +90,29 @@ exit-check.md          continue / pivot / kill decision
 
 All idea commands support `--idea <slug>`.
 
+### Model routing
+
+`opc` uses two model tiers by default:
+
+- **quality model** for adversarial reasoning and decisions: `idea kill`, `idea exit-check`, `idea interview-prep`;
+- **fast model** for lighter transformation/review tasks: `idea brief`, `idea interview-audit`.
+
 ## Providers
 
 Set one environment variable and `opc` auto-detects the provider:
 
 | Env var | Provider | Default model |
 |---|---|---|
-| `OPENAI_API_KEY` | OpenAI | `gpt-4o` / `gpt-4o-mini` |
-| `ANTHROPIC_API_KEY` | Anthropic | `claude-sonnet-4-20250514` / `claude-haiku-4-5-20251001` |
-| `DEEPSEEK_API_KEY` | DeepSeek-compatible | `deepseek-chat` |
+| `OPENAI_API_KEY` | OpenAI | `gpt-5.4` / `gpt-5.4-mini` |
+| `ANTHROPIC_API_KEY` | Anthropic | `claude-sonnet-4-6` / `claude-haiku-4-5` |
+| `DEEPSEEK_API_KEY` | DeepSeek-compatible | `deepseek-v4-pro` / `deepseek-v4-flash` |
 | `GROQ_API_KEY` | Groq-compatible | `llama-3.3-70b` / `llama-3.1-8b` |
 | none | Ollama local | `llama3.2` |
 
 Configure explicitly:
 
 ```bash
-opc init --provider openai --model gpt-4o
+opc init --provider openai --model gpt-5.4
 ```
 
 Example config:
@@ -113,8 +120,8 @@ Example config:
 ```json
 {
   "provider": "openai",
-  "model": "gpt-4o",
-  "fast_model": "gpt-4o-mini"
+  "model": "gpt-5.4",
+  "fast_model": "gpt-5.4-mini"
 }
 ```
 

@@ -46,13 +46,13 @@ interface ProviderDefaults {
 
 const PROVIDER_DEFAULTS: Record<Provider, ProviderDefaults> = {
   openai: {
-    model: "gpt-4o",
-    fast_model: "gpt-4o-mini",
+    model: "gpt-5.4",
+    fast_model: "gpt-5.4-mini",
     env_key: "OPENAI_API_KEY",
   },
   anthropic: {
-    model: "claude-sonnet-4-20250514",
-    fast_model: "claude-haiku-4-5-20251001",
+    model: "claude-sonnet-4-6",
+    fast_model: "claude-haiku-4-5",
     env_key: "ANTHROPIC_API_KEY",
   },
   "openai-compatible": {
@@ -102,8 +102,8 @@ const DETECT_CHAIN: Array<{
     env: "DEEPSEEK_API_KEY",
     resolve: () => ({
       provider: "openai-compatible",
-      model: "deepseek-chat",
-      fast_model: "deepseek-chat",
+      model: "deepseek-v4-pro",
+      fast_model: "deepseek-v4-flash",
       base_url: "https://api.deepseek.com/v1",
     }),
   },

@@ -47,8 +47,8 @@ test("loadConfig detects OPENAI_API_KEY → openai provider", () => {
   process.env.OPENAI_API_KEY = "sk-openai-test";
   const config = loadConfig();
   expect(config.provider).toBe("openai");
-  expect(config.model).toBe("gpt-4o");
-  expect(config.fast_model).toBe("gpt-4o-mini");
+  expect(config.model).toBe("gpt-5.4");
+  expect(config.fast_model).toBe("gpt-5.4-mini");
 });
 
 test("loadConfig detects ANTHROPIC_API_KEY → anthropic provider", () => {
@@ -63,7 +63,8 @@ test("loadConfig detects DEEPSEEK_API_KEY → openai-compatible with deepseek ba
   process.env.DEEPSEEK_API_KEY = "sk-deepseek-test";
   const config = loadConfig();
   expect(config.provider).toBe("openai-compatible");
-  expect(config.model).toBe("deepseek-chat");
+  expect(config.model).toBe("deepseek-v4-pro");
+  expect(config.fast_model).toBe("deepseek-v4-flash");
   expect(config.base_url).toBe("https://api.deepseek.com/v1");
 });
 
@@ -109,15 +110,15 @@ test("legacy qiniu provider normalizes to openai-compatible on load", () => {
 test("saveConfig writes and loadConfig reads back", () => {
   const config: Config = {
     provider: "openai",
-    model: "gpt-4o",
-    fast_model: "gpt-4o-mini",
+    model: "gpt-5.4",
+    fast_model: "gpt-5.4-mini",
     base_url: "https://custom.openai.com/v1",
   };
   saveConfig(config);
   expect(configExists()).toBe(true);
   const loaded = loadConfig();
   expect(loaded.provider).toBe("openai");
-  expect(loaded.model).toBe("gpt-4o");
+  expect(loaded.model).toBe("gpt-5.4");
   expect(loaded.base_url).toBe("https://custom.openai.com/v1");
 });
 
@@ -125,8 +126,8 @@ test("config with api_key returns it from requireApiKey", () => {
   clearAllEnvKeys();
   const config: Config = {
     provider: "openai",
-    model: "gpt-4o",
-    fast_model: "gpt-4o-mini",
+    model: "gpt-5.4",
+    fast_model: "gpt-5.4-mini",
     api_key: "sk-from-config",
   };
   expect(requireApiKey(config)).toBe("sk-from-config");
@@ -146,8 +147,8 @@ test("requireApiKey throws with clear message when no key found", () => {
   clearAllEnvKeys();
   const config: Config = {
     provider: "openai",
-    model: "gpt-4o",
-    fast_model: "gpt-4o-mini",
+    model: "gpt-5.4",
+    fast_model: "gpt-5.4-mini",
   };
   expect(() => requireApiKey(config)).toThrow("OPENAI_API_KEY");
 });
@@ -157,8 +158,8 @@ test("requireApiKey falls back to any known env key", () => {
   process.env.ANTHROPIC_API_KEY = "sk-ant-fallback";
   const config: Config = {
     provider: "openai",
-    model: "gpt-4o",
-    fast_model: "gpt-4o-mini",
+    model: "gpt-5.4",
+    fast_model: "gpt-5.4-mini",
   };
   expect(requireApiKey(config)).toBe("sk-ant-fallback");
 });

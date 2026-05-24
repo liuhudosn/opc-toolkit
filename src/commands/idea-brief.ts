@@ -25,6 +25,7 @@ export async function ideaBrief(opts: IdeaBriefOptions): Promise<void> {
   const result = await chat({
     system: "You are a startup hypothesis sharpener.",
     user: prompt,
+    fast: true,
     max_tokens: 2048,
   });
 
