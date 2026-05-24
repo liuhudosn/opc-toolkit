@@ -1,0 +1,36 @@
+<svg width="980" height="380" viewBox="0 0 980 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">opc terminal workflow</title>
+  <desc id="desc">Terminal preview showing opc commands and generated markdown artifacts.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="980" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020617"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; }
+    </style>
+  </defs>
+  <rect width="980" height="380" rx="22" fill="url(#bg)"/>
+  <rect x="1" y="1" width="978" height="378" rx="21" stroke="#334155" stroke-width="2"/>
+  <rect width="980" height="48" rx="22" fill="#0F172A"/>
+  <circle cx="28" cy="24" r="7" fill="#F87171"/>
+  <circle cx="52" cy="24" r="7" fill="#FBBF24"/>
+  <circle cx="76" cy="24" r="7" fill="#34D399"/>
+  <text x="116" y="30" class="mono" font-size="15" fill="#94A3B8">~/opc/expense-tool</text>
+
+  <text x="34" y="88" class="mono" font-size="18" fill="#22D3EE">$</text>
+  <text x="60" y="88" class="mono" font-size="18" fill="#E5E7EB">opc idea brief --idea expense-tool</text>
+  <text x="60" y="120" class="mono" font-size="17" fill="#94A3B8">✓ wrote 01-hypothesis.md</text>
+
+  <text x="34" y="164" class="mono" font-size="18" fill="#22D3EE">$</text>
+  <text x="60" y="164" class="mono" font-size="18" fill="#E5E7EB">opc idea kill --idea expense-tool</text>
+  <text x="60" y="196" class="mono" font-size="17" fill="#94A3B8">✓ found 9 failure modes and invalidation tests</text>
+
+  <text x="34" y="240" class="mono" font-size="18" fill="#22D3EE">$</text>
+  <text x="60" y="240" class="mono" font-size="18" fill="#E5E7EB">opc idea interview-prep --idea expense-tool</text>
+  <text x="60" y="272" class="mono" font-size="17" fill="#94A3B8">✓ wrote 07-interviews/framework.md</text>
+
+  <text x="34" y="316" class="mono" font-size="18" fill="#22D3EE">$</text>
+  <text x="60" y="316" class="mono" font-size="18" fill="#E5E7EB">opc idea exit-check --idea expense-tool</text>
+  <text x="60" y="348" class="mono" font-size="17" fill="#A7F3D0">→ decision: validate with 5 customer interviews before building</text>
+</svg>
