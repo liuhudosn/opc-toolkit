@@ -49,6 +49,13 @@ opc idea exit-check --idea expense-tool       # evaluate the 3 exit criteria
 
 All commands support `--idea <slug>` to target a workspace.
 
+## Examples
+
+Demo workspaces are available in `examples/`:
+
+- `examples/sample-idea/` - English sample idea workspace
+- `examples/demo-idea.bak/` - Chinese demo idea workspace backup
+
 ## Idea workspace layout
 
 ```
