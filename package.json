@@ -1,0 +1,24 @@
+{
+  "name": "opc-toolkit",
+  "version": "0.1.0",
+  "description": "Idea-stage CLI for AI-native one-person companies — operationalizes Anthropic's Founder's Playbook",
+  "type": "module",
+  "bin": {
+    "opc": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "bun build src/cli.ts --target=bun --outdir=dist && chmod +x dist/cli.js",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "openai": "^4.104.0",
+    "@anthropic-ai/sdk": "^0.60.0",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "^6.0.3"
+  }
+}
